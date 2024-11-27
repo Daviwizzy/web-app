@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="../css/tailwind.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Image Overlay</title>
+  </head>
+  <body>
+    <div class="flex h-screen flex-col py-[16px] px-[24px] gap-[28px]">
+      <i class="bx bx-arrow-back text-[30px] cursor-pointer" id="backArrow"></i>
+
+      <h2 class="font-[700] text-[32px] leading-[52px] text-[#212121]">
+        Register your profile
+      </h2>
+      <form id="registerForm" class="flex flex-col gap-[24px]">
+        <div class="flex flex-col gap-[16px]">
+          <label
+            for="name"
+            class="text-[16px] font-[700] leading-[25.6px] letter-spacing-[0.2px]"
+            >First Name</label
+          >
+          <input
+            type="text"
+            name="First Name"
+            id="name"
+            placeholder="e.g John"
+            required
+            pattern="[A-Za-z\s]+"
+            class="w-full px-3 py-2 border-b-2 border-green-500 focus:outline-none"
+          />
+          <p id="name-error" class="text-red-500 hidden">
+            Only letters and spaces are allowed.
+          </p>
+        </div>
+        <div class="flex flex-col gap-[16px]">
+          <label
+            for="surname"
+            class="text-[16px] font-[700] leading-[25.6px] letter-spacing-[0.2px]"
+            >Surname</label
+          >
+          <input
+            type="text"
+            name="Surname"
+            id="surname"
+            placeholder="e.g Smith"
+            required
+            pattern="[A-Za-z\s]+"
+            class="w-full px-3 py-2 border-b-2 border-green-500 focus:outline-none"
+          />
+          <p id="surname-error" class="text-red-500 hidden">
+            Only letters and spaces are allowed.
+          </p>
+        </div>
+        <div class="flex flex-col gap-[16px]">
+          <label
+            for="email"
+            class="text-[16px] font-[700] leading-[25.6px] letter-spacing-[0.2px]"
+            >Email</label
+          >
+          <input
+            type="email"
+            name="Email"
+            id="email"
+            placeholder="Email"
+            required
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            class="w-full px-3 py-2 border-b-2 border-green-500 focus:outline-none"
+          />
+          <p id="email-error" class="text-red-500 hidden">
+            Please enter a valid email address.
+          </p>
+        </div>
+        <div class="flex flex-col gap-[16px] relative">
+          <label
+            for="password"
+            class="text-[16px] font-[700] leading-[25.6px] letter-spacing-[0.2px]"
+            >Password</label
+          >
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="**********"
+            required
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}"
+            class="w-full px-3 py-2 border-b-2 border-green-500 focus:outline-none"
+          />
+          <i
+            class="bx bx-hide absolute right-3 top-12 cursor-pointer"
+            id="togglePassword"
+          ></i>
+          <p id="password-error" class="text-red-500 hidden">
+            Password must be at least 8 characters, with at least one uppercase
+            letter, one lowercase letter, one number, and one special character.
+          </p>
+        </div>
+        <div class="flex flex-col gap-[16px] relative">
+          <label
+            for="confirm-password"
+            class="text-[16px] font-[700] leading-[25.6px] letter-spacing-[0.2px]"
+            >Confirm Password</label
+          >
+          <input
+            type="password"
+            name="Confirm password"
+            id="confirm-password"
+            placeholder="**********"
+            required
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}"
+            class="w-full px-3 py-2 border-b-2 border-green-500 focus:outline-none"
+          />
+          <i
+            class="bx bx-hide absolute right-3 top-12 cursor-pointer"
+            id="toggleConfirmPassword"
+          ></i>
+          <p id="confirm-password-error" class="text-red-500 hidden">
+            Passwords must match.
+          </p>
+        </div>
+        <div id="message" class="text-center mt-4"></div>
+        <div
+          class="w-full max-h-[122px] py-[24px] px-[24px] pt-[24px] pb-[36px] flex justify-center items-center"
+        >
+          <button
+            type="submit"
+            class="bg-[#01924F] w-full h-[62px] rounded-[100px] border-t-[1px] border-[#F5F5F5] text-[#FFFFFF] font-[700] text-[16px] leading-[25.6px] text-center"
+          >
+            Continue
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <script src="../js/register.js"></script>
+  </body>
+</html>

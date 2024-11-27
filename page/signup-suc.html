@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Loading...</title>
+  </head>
+  <body
+    class="font-urbanist bg-white flex items-center justify-center min-h-screen"
+  >
+    <div
+      class="p-6 shadow-lg text-center max-h-[482px] w-[340px] rounded-[40px]"
+    >
+      <div class="loader mb-4"></div>
+      <h3 class="text-lg font-bold">Please wait...</h3>
+      <p class="text-gray-600">Your OTP is being verified.</p>
+    </div>
+
+    <style>
+      .loader {
+        border: 8px solid #f3f3f3;
+        border-top: 8px solid #3498db;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 2s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </body>
+</html>

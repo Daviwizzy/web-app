@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Email Confirmation</title>
+  </head>
+  <body class="font-urbanist bg-gray-100">
+    <div
+      class="flex flex-col items-center justify-center min-h-screen py-12 px-4 sm:px-6 lg:px-8"
+    >
+      <div class="absolute top-4 left-4">
+        <i class="bx bx-arrow-back text-3xl cursor-pointer" id="backArrow"></i>
+      </div>
+      <div class="w-full max-w-md space-y-8 p-8 rounded-lg ">
+        <div class="text-center">
+          <h2 class="text-2xl font-bold text-gray-900">OTP code verification 🔐</h2>
+          <p class="mt-2 text-sm text-gray-600" id="otpMessage">
+            We have sent an OTP code to your email address. Enter the OTP code
+            below to continue.
+          </p>
+        </div>
+        <div class="flex justify-center space-x-2 mt-6" id="otpInputs">
+          <input
+            type="text"
+            maxlength="1"
+            pattern="[0-9]*"
+            class="w-12 h-12 text-center border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+          />
+          <input
+            type="text"
+            maxlength="1"
+            pattern="[0-9]*"
+            class="w-12 h-12 text-center border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+          />
+          <input
+            type="text"
+            maxlength="1"
+            pattern="[0-9]*"
+            class="w-12 h-12 text-center border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+          />
+          <input
+            type="text"
+            maxlength="1"
+            pattern="[0-9]*"
+            class="w-12 h-12 text-center border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+          />
+        </div>
+        <div id="message" class="text-center mt-4"></div>
+        <div class="text-center mt-4">
+          <p class="text-sm text-gray-600">
+            Didn't receive an email?
+            <a
+              href="#"
+              id="resendOtp"
+              class="text-indigo-600 hover:text-indigo-500"
+              >Resend OTP</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/otp.js"></script>
+  </body>
+</html>

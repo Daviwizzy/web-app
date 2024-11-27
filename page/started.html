@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="../css/tailwind.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Image Overlay</title>
+</head>
+<body>
+    <div class="flex items-center h-[888px] flex-col py-[32px] px-[24px] gap-[28px] text-center">
+        <img src="../images/start.svg" alt="" class="" />
+        <h4 class="font-[700] text-[36px]">Let’s get you started</h4>
+        <button id="continueWithGoogle" class="w-[382px] h-[62px] py-[18px] px-[32px] flex gap-[10px] justify-center border border-gray-200 rounded-[100px]">
+            <img src="../images/Google.svg" alt="" />
+            <span>Continue with Google</span>
+        </button>
+
+        <div class="w-full flex gap-[16px] justify-center items-center">
+            <span class="w-[166.5px] h-[1px] bg-[#EEEEEE]"></span>
+            or
+            <span class="w-[166.5px] h-[1px] bg-[#EEEEEE]"></span>
+        </div>
+
+        <div class="h-[122px] w-full bottom-0 border-t border-[#F5F5F5] mt-2 py-6 px-9 flex justify-center">
+            <button id="signInWithEmail" class="w-[382px] h-[62px] py-[18px] text-[#FFFFFF] px-[32px] bg-[#01B763] rounded-[100px] font-[700]">
+                Sign in with Email Address
+            </button>
+        </div>
+
+        <div class="font-[500] text-[16px]">
+            <span>Don’t have an account?</span>
+            <span id="signUp" class="text-[#01B763] cursor-pointer">Sign up</span>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
