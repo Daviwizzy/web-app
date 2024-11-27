@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/output.css" rel="stylesheet" />
+    <link href="css/tailwind.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Sign-in</title>
+  </head>
+  <body>
+    <div class="flex h-screen flex-col py-[16px] px-[24px] gap-[28px]">
+      <i
+        class="bx bx-left-arrow-alt text-[30px] cursor-pointer"
+        id="backArrow"
+      ></i>
+      <h3 class="text-[32px] font-[700] leading-[51px] mb-14">Welcome back</h3>
+
+      <form id="signIn" class="flex flex-col gap-[24px]">
+        <div class="flex flex-col gap-[16px]">
+          <label
+            for="email"
+            class="text-[16px] font-[700] leading-[25.6px] letter-spacing-[0.2px]"
+          >
+            Email Address</label
+          >
+          <input
+            type="email"
+            name="Email"
+            id="Email-address"
+            placeholder="Please enter your email address"
+            required
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            class="w-full py-2 border-b-2 border-green-500 focus:outline-none mb-8"
+          />
+        </div>
+
+        <div class="relative flex flex-col gap-[16px]">
+          <label
+            for="password"
+            class="text-[16px] font-[700] leading-[25.6px] letter-spacing-[0.2px]"
+            >Password</label
+          >
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="**********"
+            required
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}"
+            class="w-full  py-2 border-b-2 border-green-500 focus:outline-none"
+          />
+          <i
+            class="bx bx-hide absolute right-3 top-12 cursor-pointer"
+            id="togglePassword"
+          ></i>
+        </div>
+      </form>
+
+      <div class="w-full flex gap-[16px] justify-center items-center">
+        <span class="w-[100%] h-[1px] bg-[#EEEEEE]"></span>
+        or
+        <span class="w-[100%] h-[1px] bg-[#EEEEEE]"></span>
+      </div>
+
+      <button
+        id="continueWithGoogle"
+        class="w-[100%] h-[62px] py-[18px] px-[32px] flex gap-[10px] justify-center border border-gray-200 rounded-[100px]"
+      >
+        <img src="../images/Google.svg" alt="" />
+        <span class="text-[#212121] font-[600]">Continue with Google</span>
+      </button>
+    </div>
+    <script src="../js/register.js"></script>
+   <script src="../js/sign-in.js"></script>
+  </body>
+</html>
