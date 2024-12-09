@@ -1,51 +1,53 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-    />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <title>Loading...</title>
-  </head>
-  <body
-    class="font-urbanist bg-white flex items-center justify-center min-h-screen"
-  >
-    <div
-      class="p-6 shadow-lg text-center max-h-[482px] w-[340px] rounded-[40px]"
-    >
-      <div class="loader mb-4"></div>
-      <h3 class="text-lg font-bold">Please wait...</h3>
-      <p class="text-gray-600">Your OTP is being verified.</p>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="../css/tailwind.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="font-urbanist bg-gray-500 flex items-center justify-center min-h-screen">
+  <section
+    class="flex justify-center flex-col items-center bg-white w-[340px] h-[482px] rounded-[40px] p-[32px] pt-[40px] gap-[32px]">
+    <div>
+      <img src="/images/sign-up-successful.png" alt="Sign up Successful!" class="max-w-[185.93px] max-h-[180px]" />
     </div>
+    <div class="flex justify-center flex-col items-center gap-[16px]">
+      <h2 class="font-[700] text-[24px] text-[#01B763]">Sign up Successful!</h2>
+      <p class="text-center font-[400] text-[16px] leading-[25.6px] ">Please wait...
+        <br>You will be directed to the Login
+      </p>
+    </div>
+  </section>
 
-    <style>
-      .loader {
-        border: 8px solid #f3f3f3;
-        border-top: 8px solid #3498db;
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        animation: spin 2s linear infinite;
+  <style>
+    .loader {
+      border: 8px solid #f3f3f3;
+      border-top: 8px solid #3498db;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 2s linear infinite;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
       }
 
-      @keyframes spin {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(360deg);
-        }
+      100% {
+        transform: rotate(360deg);
       }
-    </style>
-  </body>
+    }
+  </style>
+</body>
+
 </html>

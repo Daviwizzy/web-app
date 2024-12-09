@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="../css/tailwind.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div
+      class="flex h-screen flex-col py-[16px] px-[24px] gap-[28px] text-[#424242]"
+    >
+      <div class="top-0 flex gap-[16px] items-center">
+        <i
+          class="bx bx-arrow-back text-[30px] cursor-pointer"
+          id="backArrow"
+        ></i>
+        <h4 class="font-[700] text-[24px]">Privacy Policy</h4>
+      </div>
+      <p class="font-[400] text-[18px]">
+        At Verizone, we respect and protect the privacy of our users. This
+        Privacy Policy outlines the types of personal information we collect,
+        how we use it, and how we protect your information
+      </p>
+      <div>
+        <h4 class="font-[700] text-[24px] leading-[38.4px]">
+          Information We Collect
+        </h4>
+        <p>
+          When you use our app, we may collect the following types of personal
+          information:
+        </p>
+        <ul class="list-disc pl-5 space-y-2">
+          <li>
+            Device Information: We may collect information about the type of
+            device you use, its operating system, and other technical details to
+            help us improve our app.
+          </li>
+          <li>
+            Usage Information: We may collect information about how you use our
+            app, such as which features you use and how often you use them.
+          </li>
+          <li>
+            Personal Information: We may collect personal information, such as
+            your name, email address, or phone number, if you choose to provide
+            it to us.
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-[700] text-[24px] leading-[38.4px]">
+          How We Use Your Information
+        </h4>
+        <p>We use your information for the following purposes:</p>
+        <ul class="list-disc pl-5 space-y-2">
+          <li>
+            To provide and improve our app: We use your information to provide
+            and improve our app, including to personalize your experience and to
+            analyze how our app is used.
+          </li>
+          <li>
+            To communicate with you: We may use your information to communicate
+            with you about our app, including to provide you with updates and
+            news about our app.
+          </li>
+          <li class="pb-10">
+            To protect our rights and the rights of others: We may use your
+            information to protect our rights and the rights of others, such as
+            to investigate and prevent fraud or other illegal activity.
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      document
+        .getElementById("backArrow")
+        .addEventListener("click", function () {
+          window.location.href = "/page/account.html";
+        });
+    </script>
+  </body>
+</html>

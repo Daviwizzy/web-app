@@ -55,7 +55,7 @@ document
     };
 
     try {
-      const response = await fetch("YOUR_BACKEND_ENDPOINT", {
+      const response = await fetch("/api/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Help Center</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-100">
+    <div class="max-w-lg mx-auto p-4 bg-white shadow-md">
+      <!-- Navigation Bar -->
+      <div class="flex justify-between items-center p-2 border-b">
+        <button class="text-gray-700">&#8592; Back</button>
+        <span class="text-lg font-semibold">Help Center</span>
+      </div>
+      <!-- Tabs -->
+      <div class="flex justify-between mt-4">
+        <button class="flex-1 text-center p-2 border-b-2 border-blue-500">
+          FAQ
+        </button>
+        <button class="flex-1 text-center p-2">Contact us</button>
+      </div>
+      <!-- Categories -->
+      <div class="flex flex-col mt-4 space-y-2">
+        <button class="py-2 px-4 text-left bg-blue-100">General</button>
+        <button class="py-2 px-4 text-left">Account</button>
+        <button class="py-2 px-4 text-left">Service</button>
+      </div>
+      <!-- FAQ Items -->
+      <div class="mt-4">
+        <div class="mb-2">
+          <button
+            class="w-full text-left py-2 px-4 bg-gray-200"
+            data-target="faq1"
+          >
+            What is Verizon?
+          </button>
+          <p id="faq1" class="hidden px-4 py-2">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+          </p>
+        </div>
+        <div class="mb-2">
+          <button
+            class="w-full text-left py-2 px-4 bg-gray-200"
+            data-target="faq2"
+          >
+            Are Verizon Services free?
+          </button>
+          <p id="faq2" class="hidden px-4 py-2">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+          </p>
+        </div>
+        <div class="mb-2">
+          <button
+            class="w-full text-left py-2 px-4 bg-gray-200"
+            data-target="faq3"
+          >
+            Where are your jurisdictions?
+          </button>
+          <p id="faq3" class="hidden px-4 py-2">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.querySelectorAll("button[data-target]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const targetId = button.getAttribute("data-target");
+          const targetElement = document.getElementById(targetId);
+          if (targetElement.classList.contains("hidden")) {
+            targetElement.classList.remove("hidden");
+          } else {
+            targetElement.classList.add("hidden");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

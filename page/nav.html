@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <title>Navigation Bar</title>
+</head>
+
+<body class="flex justify-center items-center min-h-screen bg-gray-100">
+  <div class="w-full py-5 flex justify-around px-8 text-[#9E9E9E]">
+    <div class="nav-item flex flex-col gap-1 items-center text-[10px] hover:text-[#1ABE73]">
+      <i class='bx bx-home-alt-2 text-2xl'></i>
+      <span>Home</span>
+    </div>
+    <div class="nav-item flex flex-col gap-1 items-center text-[10px]">
+      <i class='bx bx-user text-2xl'></i>
+      <span>Payments</span>
+    </div>
+    <div class="nav-item flex flex-col gap-1 items-center text-[10px]">
+      <i class='bx bxs-wallet-alt text-2xl'></i>
+      <span>Account</span>
+    </div>
+  </div>
+
+  <script>
+    // Select all navigation items
+    const navItems = document.querySelectorAll('.nav-item');
+
+    // Add click event listener to each navigation item
+    navItems.forEach(item => {
+      item.addEventListener('click', () => {
+        // Remove active styles from all items
+        navItems.forEach(nav => {
+          nav.classList.remove('text-[#1ABE73]');
+          nav.querySelector('i').classList.remove('text-[#1ABE73]');
+        });
+
+        // Add active styles to the clicked item
+        item.classList.add('text-[#1ABE73]');
+        item.querySelector('i').classList.add('text-[#1ABE73]');
+      });
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Help Center</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+      gap: 20px;
+    }
+
+    .tab-link {
+      border-bottom: 2px solid #eeeeee;
+      width: 191px;
+      text-align: center;
+      transition: border-color 0.3s;
+    }
+
+    .tab-link-active {
+      border-bottom: 4px solid #01924f;
+    }
+
+    body {
+      font-family: "Urbanist", sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="flex h-screen flex-col py-4 px-6 gap-7  text-gray-900 mb-[160px]">
+    <div class="top-0 flex gap-4 items-center justify-between">
+      <div class="flex gap-[16px] items-center">
+        <img src="../images/create-property-icon.png" alt="create-property-icon" />
+        <h4 class="font-bold text-2xl">My Documents</h4>
+      </div>
+      <i class='bx bx-search text-3xl'></i>
+    </div>
+    <div class="flex justify-around flex-row mb-4">
+      <button class="tab-link py-2 px-4 text-nowrap" onclick="openTab(event, 'create-new')">
+        <a href="#create-new"> Create New</a>
+      </button>
+      <button class="tab-link py-2 px-4" onclick="openTab(event, 'pending')">
+        <a href="#pending"> Pending</a>
+      </button>
+      <button class="tab-link py-2 px-4" onclick="openTab(event, 'completed')">
+        <a href="#completed">Completed</a>
+      </button>
+    </div>
+    <div id="create-new" class="tab-content active">
+      <form id="registerForm" class="flex flex-col gap-[24px]">
+        <div class="flex flex-col gap-[16px]">
+          <label for="address" class="text-[16px] font-[700] leading-[25.6px]">Address</label>
+          <input type="text" name="Address" id="address" placeholder="e.g 11, Allen avenue Opebi Ikeja Road" required
+            pattern="[A-Za-z\s]+" class="w-full px-3 py-2 border-b-2 font-[700] border-green-500 focus:outline-none" />
+        </div>
+
+        <div class="flex flex-col gap-[16px]">
+          <label for="state" class="text-[16px] font-[700] leading-[25.6px]">Select State/Province</label>
+          <input type="text" name="State" id="state" placeholder="e.g Lagos" required pattern="[A-Za-z\s]+"
+            class="w-full px-3 py-2 border-b-2 font-[700] border-green-500 focus:outline-none" />
+        </div>
+        <div class="flex flex-col gap-[16px]">
+          <label for="local-government" class="text-[16px] font-[700] leading-[25.6px]">Local Government</label>
+          <input type="text" name="Local Government" id="local-government" placeholder="e.g Amuwo Odofin" required
+            pattern="[A-Za-z\s]+" class="w-full px-3 py-2 border-b-2 font-[700] border-green-500 focus:outline-none" />
+        </div>
+        <div class="flex flex-col gap-[16px]">
+          <label for="landmark" class="text-[16px] font-[700] leading-[25.6px]">Nearest Landmark</label>
+          <input type="text" name="Landmark" id="landmark" placeholder="e.g Shopright, Beside Allen Roundabout" required
+            pattern="[A-Za-z\s]+" class="w-full px-3 py-2 border-b-2 font-[700] border-green-500 focus:outline-none" />
+        </div>
+
+        <div class="flex justify-center flex-col items-center gap-6" id="fileName">
+          <input type="file" id="fileInput" class="hidden" accept="*/*" />
+          <button type="button" id="openFileButton"
+            class="bg-[#E6F8EF] w-full h-[62px] rounded-[100px] border-t-[1px] border-[#F5F5F5] text-[#01B763] font-[700] text-[16px] leading-[25.6px] text-center">
+            <span><i class="bx bx-plus"></i></span>
+            Upload Documents
+          </button>
+          <div id="error-message" class="text-red-400 text-center font-bold hidden"></div>
+          <span class="font-[500] text-[14px] text-[#757575] text-center">
+            Only PDF and Image documents are allowed up to 100MB.
+          </span>
+        </div>
+
+        <button type="submit" id="verifyButton"
+          class="w-full h-[62px] rounded-[100px] py-[18px] px-[16px] bg-[#E6F8EF] hidden">
+          <p class="font-[700] text-[16px] text-[#01B763]">
+            Start verification
+          </p>
+        </button>
+      </form>
+    </div>
+
+    <div id="pending" class="tab-content">
+    </div>
+    <!-- <div class="w-full h-[307px] hidden rounded-t-[36px] py-3 px-6 border border-solid border-gray-100 bg-white gap-6">
+      <p class="font-[700] text-[24px] text-center text-[#F75555]">
+        Cancel Verification
+      </p>
+      <p class="font-[700] text-[20px] text-center text-gray-800">
+        Are you sure you want to cancel the document verification?
+      </p>
+      <div class="flex justify-between gap-4">
+        <button
+          class="w-[183px] h-[62px] rounded-[100px] py-2 px-5 font-[600] text-[16px] text-[#01B763] bg-[#E6F8EF] text-nowrap">
+          No, Don’t Cancel
+        </button>
+        <button style="box-shadow: 4px 8px 24px 0px rgba(1, 183, 99, 0.25)"
+          class="w-[183px] h-[62px] rounded-[100px] py-2 px-5 font-[600] text-[16px] text-[#FFFFFF] bg-[#F75555] text-nowrap shadow">
+          Make Payment
+        </button>
+      </div>
+    </div> -->
+  </div>
+  <div id="completed" class="tab-content">
+    <!-- <div class="flex flex-col gap-5 w-full">
+      <div class="w-full rounded-2xl p-5 flex flex-col gap-4 bg-[#FAFAFA] border border-[#EEEEEE]  ">
+        <div class="flex justify-between gap-5 font-[600] items-center">
+          <p class="font-[600] text-[16px]">
+            11, Allen avenue opebi Ikeja Road
+          </p>
+          <p
+            class="rounded-[6px] py-[6px] px-[10px] bg-gradient-to-r from-[#F5484A] to-[#FF7475] text-[10px] text-nowrap text-white">
+            Cancelled </p>
+        </div>
+        <hr class=" bg-[#EEEEEE]" />
+        <p class="font-[700] text-[20px] text-[#212121]">
+          You canceled the verification process. </p>
+        <hr class=" bg-[#EEEEEE]" />
+        <hr class=" bg-[#EEEEEE]" />
+        <button
+          class="w-full rounded-[100px] py-2 px-5 border-2 border-[#F75555] font-[600] text-[16px] text-[#F75555]">
+          Restart Verification
+        </button>
+      </div>
+      <div class="w-full rounded-2xl p-5 flex flex-col gap-4 bg-[#FAFAFA] border border-[#EEEEEE]  ">
+        <div class="flex justify-between gap-5 font-[600] items-center">
+          <p class="font-[600] text-[16px]">
+            11, Allen avenue opebi Ikeja Road
+          </p>
+          <p
+            class="rounded-[6px] py-[6px] px-[10px] bg-gradient-to-r from-[#01B763] to-[#34E895] text-[10px] text-nowrap text-white">
+            Cancelled </p>
+        </div>
+        <hr class=" bg-[#EEEEEE]" />
+        <p class="font-[700] text-[20px] text-[#212121]">
+          We have completed the verification of this property </p>
+        <hr class=" bg-[#EEEEEE]" />
+        <hr class=" bg-[#EEEEEE]" />
+        <button class="w-full rounded-[100px] py-2 px-5 font-[600] text-[16px] text-[#FFFFFF] bg-[#01B763] text-nowrap">
+          View Results </button>
+      </div>
+    </div> -->
+
+  </div>
+  </div>
+  <div
+    class="w-full bg-white py-5 flex justify-around fixed px-8 text-[#9E9E9E] bottom-0 left-0 shadow-[0_-2px_10px_rgba(0,0,0,0.1)]">
+    <div class="nav-item flex flex-col gap-1 items-center text-[10px]" data-page="index.html">
+      <i class='bx bx-home-alt-2 text-2xl'></i>
+      <span>Home</span>
+    </div>
+    <div class=" nav-item flex flex-col gap-1 items-center text-[10px]" data-page="my-payment.html">
+      <i class='bx bx-user text-2xl'></i>
+      <span>Payments</span>
+    </div>
+    <div class="nav-item flex flex-col gap-1 items-center text-[10px]" data-page="account.html">
+      <i class='bx bxs-wallet-alt text-2xl'></i>
+      <span>Account</span>
+    </div>
+  </div>
+  </div>
+  <script src="../js/create-property.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+
+</html>

@@ -16,3 +16,6 @@ document.getElementById("signUp").addEventListener("click", function () {
   console.log("Sign up clicked");
   window.location.href = "/page/register.html";
 });
+
+
+
