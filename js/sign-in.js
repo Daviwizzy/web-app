@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const togglePassword = document.getElementById("togglePassword");
 const passwordField = document.getElementById("password");
 
@@ -63,3 +64,20 @@ document.getElementById("signIn").addEventListener("submit", function (e) {
       });
   }
 });
+=======
+
+  // Toggle password visibility
+  const togglePassword = document.getElementById("togglePassword");
+  const passwordField = document.getElementById("password");
+
+  togglePassword.addEventListener("click", function () {
+    // Toggle the type attribute
+    const type =
+      passwordField.getAttribute("type") === "password" ? "text" : "password";
+    passwordField.setAttribute("type", type);
+
+    // Toggle the icon class
+    this.classList.toggle("bx-show");
+    this.classList.toggle("bx-hide");
+  });
+>>>>>>> 55de5add9980a1bc463972d2b69380ec239611f5
